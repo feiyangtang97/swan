@@ -59,7 +59,7 @@ public class FeatureHandler {
             new HashSet<>(Arrays.asList(Category.SOURCE, Category.SINK,
                 Category.SANITIZER, Category.AUTHENTICATION_NEUTRAL,
                 Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-                Category.CWE089, Category.CWE862, Category.CWE863, Category.CWE078, Category.CWE306, Category.CWE079, Category.CWE601,
+                Category.CWE359, Category.CWE202, Category.CWE213,
                 Category.NONE)));
     }
     if(disable != 2) {
@@ -67,7 +67,7 @@ public class FeatureHandler {
     	IFeature anonymousClass = new MethodAnonymousClassFeature(true);
         ((WeightedFeature)anonymousClass).setWeight(8);
         addFeature(anonymousClass,
-            new HashSet<>(Arrays.asList(Category.SOURCE,Category.SINK, Category.NONE, Category.CWE078, Category.CWE079, Category.CWE089, Category.CWE306, Category.CWE862, Category.CWE863, Category.CWE601)));
+            new HashSet<>(Arrays.asList(Category.SOURCE,Category.SINK, Category.NONE, Category.CWE359, Category.CWE202, Category.CWE213)));
         
     }
     if(disable != 3) {
@@ -142,16 +142,14 @@ public class FeatureHandler {
         ((WeightedFeature)classNameContainsConnect).setWeight(9);
     	    addFeature(classNameContainsConnect,
     	        new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-    	            Category.AUTHENTICATION_TO_HIGH, 
-    	            Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+    	            Category.AUTHENTICATION_TO_HIGH, Category.NONE)));
     }
     if(disable != 12) {
     	IFeature classNameContainsBind = new MethodClassContainsNameFeature("Bind");
         ((WeightedFeature)classNameContainsBind).setWeight(21);
 	    addFeature(classNameContainsBind,
 	        new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-	            Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-	            Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+	            Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW, Category.NONE)));
     }
     if(disable != 13) {
     	IFeature classNameContainsOAuth = new MethodClassContainsNameFeature(
@@ -160,199 +158,217 @@ public class FeatureHandler {
     	    addFeature(classNameContainsOAuth,
     	        new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
     	            Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-    	            Category.CWE306, Category.NONE)));
+                    //could be unauthorised user
+    	            Category.CWE359, Category.NONE)));
     }
+    //changed 14
     if(disable != 14) {
     	IFeature classNameContainsIO = new MethodClassContainsNameFeature(".io.");
         ((WeightedFeature)classNameContainsIO).setWeight(13);
 	    addFeature(classNameContainsIO, new HashSet<>(
-	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+	        Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE201, Category.CWE202, Category.CWE538, Category.NONE)));
     }
+    //changed 15
     if(disable != 15) {
     	IFeature classNameContainsWeb = new MethodClassContainsNameFeature("web");
         ((WeightedFeature)classNameContainsWeb).setWeight(15);
 	    addFeature(classNameContainsWeb, new HashSet<>(
-	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE, Category.CWE079, Category.CWE601)));
+	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE, Category.CWE201, Category.CWE538)));
     }
+    //changed 16
     if(disable != 16) {
     	IFeature classNameContainsNet = new MethodClassContainsNameFeature(".net.");
         ((WeightedFeature)classNameContainsNet).setWeight(9);
         addFeature(classNameContainsNet, new HashSet<>(
-            Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+            Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE, Category.CWE201, Category.CWE538)));
     }
+    //changed 
     if(disable != 17) {
     	 IFeature classNameContainsSql = new MethodClassContainsNameFeature("sql");
         ((WeightedFeature)classNameContainsSql).setWeight(17);
          addFeature(classNameContainsSql,
              new HashSet<>(Arrays.asList(Category.SOURCE, Category.SINK,
-                 Category.CWE089, Category.NONE)));
+                 Category.CWE202, Category.NONE)));
     }
+    //changed
     if(disable != 18) {
     	IFeature classNameContainsManager = new MethodClassContainsNameFeature(
     	        "Manager");
         ((WeightedFeature)classNameContainsManager).setWeight(-5);
     	    addFeature(classNameContainsManager, new HashSet<>(
-    	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+    	        Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE200, Category.CWE359, Category.CWE359)));
     }
+    //changed
     if(disable != 19) {
     	IFeature classNameContainsOutput = new MethodClassContainsNameFeature(
     	        "Output");
         ((WeightedFeature)classNameContainsOutput).setWeight(-8);
     	    addFeature(classNameContainsOutput,
-    	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+    	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE201, Category.CWE538, Category.CWE359, Category.CWE200)));
     }
+    //changed
     if(disable != 20) {
     	IFeature classNameContainsInput = new MethodClassContainsNameFeature(
     	        "Input");
         ((WeightedFeature)classNameContainsInput).setWeight(5);
     	    addFeature(classNameContainsInput,
-    	        new HashSet<>(Arrays.asList(Category.SINK, Category.CWE079, Category.CWE078, Category.CWE089, Category.NONE)));  
+    	        new HashSet<>(Arrays.asList(Category.SINK, Category.CWE201, Category.CWE538, Category.CWE359, Category.CWE200, Category.NONE)));  
     }
+    //changed
     if(disable != 21) {
     	IFeature classNameContainsDatabase = new MethodClassContainsNameFeature(
     	        "database");
         ((WeightedFeature)classNameContainsDatabase).setWeight(10);
     	    addFeature(classNameContainsDatabase,
-    	        new HashSet<>(Arrays.asList(Category.CWE089, Category.NONE)));
+    	        new HashSet<>(Arrays.asList(Category.CWE202,Category.CWE201, Category.NONE)));
     }
+    //changed
     if(disable != 22) {
     	 IFeature classNameContainsDb = new MethodClassContainsNameFeature("db");
         ((WeightedFeature)classNameContainsDb).setWeight(5);
  	    addFeature(classNameContainsDb,
- 	        new HashSet<>(Arrays.asList(Category.CWE089, Category.NONE)));
+ 	        new HashSet<>(Arrays.asList(Category.CWE202, Category.NONE)));
     }
+    //changed
     if(disable != 23) {
-    	IFeature classNameContainsHibernate = new MethodClassContainsNameFeature(
-    	        "hibernate");
-        ((WeightedFeature)classNameContainsHibernate).setWeight(-8);
-    	    addFeature(classNameContainsHibernate,
-    	        new HashSet<>(Arrays.asList(Category.CWE089, Category.CWE079, Category.NONE)));
+    	IFeature classNameContainsAccount = new MethodClassContainsNameFeature(
+    	        "account");
+        ((WeightedFeature)classNameContainsAccount).setWeight(-8);
+    	    addFeature(classNameContainsAccount,
+    	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE200, Category.CWE359, Category.CWE201, Category.NONE)));
     }
+    //changed
     if(disable != 24) {
     	IFeature classNameContainsCredential = new MethodClassContainsNameFeature(
     	        "credential");
         ((WeightedFeature)classNameContainsCredential).setWeight(19);
     	    addFeature(classNameContainsCredential,
-    	        new HashSet<>(Arrays.asList(Category.CWE078, Category.CWE862,
-    	            Category.CWE863, Category.NONE)));
+    	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE359, Category.CWE200,
+    	            Category.CWE201, Category.NONE)));
     }
+    //changed
     if(disable != 25) {
     	IFeature classNameContainsProcess = new MethodClassContainsNameFeature(
     	        "process");
         ((WeightedFeature)classNameContainsProcess).setWeight(13);
     	    addFeature(classNameContainsProcess,
-    	        new HashSet<>(Arrays.asList(Category.CWE078, Category.NONE)));
+    	        new HashSet<>(Arrays.asList(Category.CWE213, Category.NONE)));
     }
+    //changed
     if(disable != 26) {
     	
-        IFeature classNameContainsRuntime = new MethodClassContainsNameFeature(
-            "runtime");
-        ((WeightedFeature)classNameContainsRuntime).setWeight(17);
-        addFeature(classNameContainsRuntime,
-            new HashSet<>(Arrays.asList(Category.CWE078, Category.NONE)));        
+        IFeature classNameContainsID = new MethodClassContainsNameFeature(
+            "ID");
+        ((WeightedFeature)classNameContainsID).setWeight(17);
+        addFeature(classNameContainsID,
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE200, Category.CWE359, Category.NONE)));        
     }
+    //changed
     if(disable != 27) {
     	IFeature classNameContainsUser = new MethodClassContainsNameFeature("user");
         ((WeightedFeature)classNameContainsUser).setWeight(2);
         addFeature(classNameContainsUser, new HashSet<>(
-            Arrays.asList(Category.CWE862, Category.CWE863, Category.NONE)));
+            Arrays.asList(Category.SOURCE, Category.CWE359, Category.CWE200, Category.NONE)));
     }
+    //changed
     if(disable != 28) {
     	IFeature classNameContainsJdbc = new MethodClassContainsNameFeature("jdbc");
         ((WeightedFeature)classNameContainsJdbc).setWeight(2);
         addFeature(classNameContainsJdbc,
-            new HashSet<>(Arrays.asList(Category.SINK,
-                Category.CWE089, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE201,
+                Category.CWE202, Category.NONE)));
     }
+    //changed
     if(disable != 29) {
-    	
         IFeature classNameContainsHtml = new MethodClassContainsNameFeature(
                 "Html");
         ((WeightedFeature)classNameContainsHtml).setWeight(1);
             addFeature(classNameContainsHtml,
-                new HashSet<>(Arrays.asList(Category.SINK, Category.SOURCE, Category.CWE079, Category.NONE)));    
+                new HashSet<>(Arrays.asList(Category.SINK, Category.SOURCE, Category.CWE201, Category.NONE)));    
     }
+    //changed
     if(disable != 30) {
     	IFeature classNameContainsPage = new MethodClassContainsNameFeature(
                 "Page");
         ((WeightedFeature)classNameContainsPage).setWeight(5);
             addFeature(classNameContainsPage,
-                new HashSet<>(Arrays.asList(Category.CWE079, Category.SANITIZER, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE213, Category.SANITIZER, Category.NONE)));
     }
+    //changed
     if(disable != 31) {
     	IFeature classNameContainsRequest = new MethodClassContainsNameFeature("Request");
         ((WeightedFeature)classNameContainsRequest).setWeight(13);
         addFeature(classNameContainsRequest, new HashSet<>(
-            Arrays.asList(Category.CWE601, Category.NONE)));
+            Arrays.asList(Category.CWE213, Category.NONE)));
     }
+    //changed
     if(disable != 32) {
     	IFeature classNameContainsHttp = new MethodClassContainsNameFeature("http");
         ((WeightedFeature)classNameContainsHttp).setWeight(-8);
         addFeature(classNameContainsHttp, new HashSet<>(
-            Arrays.asList(Category.CWE601, Category.NONE)));
+            Arrays.asList(Category.CWE201, Category.NONE)));
     }
+    //changed
     if(disable != 33) {
-    	
         IFeature classNameContainsUrl = new MethodClassContainsNameFeature(
                 "url");
         ((WeightedFeature)classNameContainsUrl).setWeight(13);
             addFeature(classNameContainsUrl,
-                new HashSet<>(Arrays.asList(Category.CWE601, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE201, Category.NONE)));
     }
     if(disable != 34) {
     	IFeature classNameContainsServlet = new MethodClassContainsNameFeature(
                 "servlet");
         ((WeightedFeature)classNameContainsServlet).setWeight(0);
             addFeature(classNameContainsServlet,
-                new HashSet<>(Arrays.asList(Category.CWE601, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE201, Category.NONE)));
     }
     if(disable != 35) {
     	IFeature classNameContainsResponse = new MethodClassContainsNameFeature(
                 "Response");
         ((WeightedFeature)classNameContainsResponse).setWeight(7);
             addFeature(classNameContainsResponse,
-                new HashSet<>(Arrays.asList(Category.CWE601, Category.SINK, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE201, Category.SINK, Category.NONE)));
     }
     if(disable != 36) {
     	IFeature classNameContainsRedirect = new MethodClassContainsNameFeature(
                 "Redirect");
         ((WeightedFeature)classNameContainsRedirect).setWeight(7);
             addFeature(classNameContainsRedirect,
-                new HashSet<>(Arrays.asList(Category.CWE601, Category.SINK, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE201, Category.SINK, Category.NONE)));
     }
     if(disable != 37) {
     	IFeature classNameContainsCss = new MethodClassContainsNameFeature(
                 "Css");
         ((WeightedFeature)classNameContainsCss).setWeight(5);
             addFeature(classNameContainsCss,
-                new HashSet<>(Arrays.asList(Category.CWE079, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.NONE)));
     }
     if(disable != 38) {
     	 IFeature classNameContainsDom = new MethodClassContainsNameFeature(
                  "Dom");
         ((WeightedFeature)classNameContainsDom).setWeight(-1);
              addFeature(classNameContainsDom,
-                 new HashSet<>(Arrays.asList(Category.CWE079, Category.NONE)));
+                 new HashSet<>(Arrays.asList(Category.NONE)));
     }
     if(disable != 39) {
     	// Method class ends 
         IFeature classEndsWithEncoder = new MethodClassEndsWithNameFeature("Encoder");
         ((WeightedFeature)classEndsWithEncoder).setWeight(18);
         addFeature(classEndsWithEncoder, new HashSet<>(Arrays.asList(
-                Category.SANITIZER, Category.CWE078, Category.CWE079, Category.CWE862,
-                Category.CWE863, Category.CWE089, Category.NONE)));
+                Category.SANITIZER, Category.NONE)));
     }
     if(disable != 40) {
     	IFeature classEndsWithRequest = new MethodClassEndsWithNameFeature("Request");
         ((WeightedFeature)classEndsWithRequest).setWeight(13);
         addFeature(classEndsWithRequest, new HashSet<>(Arrays.asList(
-                Category.SINK, Category.CWE079, Category.CWE089, Category.NONE)));
+                Category.SINK, Category.CWE200, Category.CWE201, Category.NONE)));
     }
     if(disable != 41) {
     	IFeature classEndsWithRender = new MethodClassEndsWithNameFeature("Render");
         ((WeightedFeature)classEndsWithRender).setWeight(-8);
         addFeature(classEndsWithRender, new HashSet<>(Arrays.asList(
-                Category.SINK, Category.CWE079, Category.NONE)));
+                Category.SINK, Category.NONE)));
     }
     if(disable != 42) {
     	// Class modifier.
@@ -381,9 +397,9 @@ public class FeatureHandler {
         IFeature hasParamsPerm = new MethodHasParametersFeature();
         ((WeightedFeature)hasParamsPerm).setWeight(2);
         addFeature(hasParamsPerm,
-            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.SINK, Category.CWE079,
+            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.SINK,
                 Category.AUTHENTICATION_NEUTRAL, Category.AUTHENTICATION_TO_HIGH,
-                Category.AUTHENTICATION_TO_LOW, Category.CWE601, Category.CWE089, Category.NONE)));	
+                Category.AUTHENTICATION_TO_LOW, Category.CWE201, Category.CWE538, Category.NONE)));	
     }
     if(disable != 46) {
     	// Has a return type.
@@ -392,14 +408,14 @@ public class FeatureHandler {
         addFeature(hasReturnType,
             new HashSet<>(Arrays.asList(Category.SOURCE,
                 Category.AUTHENTICATION_NEUTRAL, Category.AUTHENTICATION_TO_HIGH,
-                Category.AUTHENTICATION_TO_LOW, Category.CWE601, Category.NONE)));
+                Category.AUTHENTICATION_TO_LOW, Category.CWE200, Category.NONE)));
     }
     if(disable != 47) {
     	IFeature innerClassMethod = new MethodInnerClassFeature(cp, true);
         ((WeightedFeature)innerClassMethod).setWeight(0);
         addFeature(innerClassMethod,
             new HashSet<>(Arrays.asList(
-                Category.SINK, Category.SOURCE, Category.NONE, Category.CWE078, Category.CWE079, Category.CWE089, Category.CWE306, Category.CWE862, Category.CWE863, Category.CWE601 )));
+                Category.SINK, Category.SOURCE, Category.NONE)));
     }
     if(disable != 48) {
     	// Call to a method of class.
@@ -446,7 +462,7 @@ public class FeatureHandler {
             addFeature(methodInvocationClassNameSQL,
                 new HashSet<>(Arrays.asList(Category.SOURCE, Category.SINK,
                     Category.AUTHENTICATION_NEUTRAL, Category.AUTHENTICATION_TO_HIGH,
-                    Category.AUTHENTICATION_TO_LOW, Category.NONE)));
+                    Category.AUTHENTICATION_TO_LOW, Category.CWE202, Category.NONE)));
     }
     if(disable != 54) {
     	IFeature methodInvocationClassNameDB = new MethodInvocationClassName(cp,
@@ -462,21 +478,21 @@ public class FeatureHandler {
                 "web");
         ((WeightedFeature)methodInvocationClassNameWeb).setWeight(29);
             addFeature(methodInvocationClassNameWeb, new HashSet<>(
-                Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE079, Category.NONE)));
+                Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE201, Category.NONE)));
     }
     if(disable != 56) {
     	IFeature methodInvocationClassNameNet = new MethodInvocationClassName(cp,
                 ".net.");
         ((WeightedFeature)methodInvocationClassNameNet).setWeight(19);
             addFeature(methodInvocationClassNameNet, new HashSet<>(
-                Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+                Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE201, Category.NONE)));
     }
     if(disable != 57) {
     	IFeature methodInvocationClassNameLog = new MethodInvocationClassName(cp,
                 "Log.");
         ((WeightedFeature)methodInvocationClassNameLog).setWeight(19);
             addFeature(methodInvocationClassNameLog,
-                new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE359)));
     }
     if(disable != 58) {
     	// Call to a method.
@@ -540,7 +556,7 @@ public class FeatureHandler {
             addFeature(methodInvocationNameAuthori,
                 new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
                     Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-                    Category.CWE862, Category.CWE863, Category.NONE)));
+                    Category.CWE200, Category.CWE359, Category.NONE)));
     }
     if(disable != 67) {
     	IFeature methodInvocationNameAuthen = new MethodInvocationName(cp,
@@ -549,7 +565,7 @@ public class FeatureHandler {
             addFeature(methodInvocationNameAuthen,
                 new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
                     Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-                    Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                    Category.CWE213, Category.NONE)));
     }
     if(disable != 68) {
     	IFeature methodInvocationNameLogin = new MethodInvocationName(cp, "login");
@@ -557,7 +573,7 @@ public class FeatureHandler {
         addFeature(methodInvocationNameLogin,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
                 Category.AUTHENTICATION_TO_HIGH, 
-                Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                Category.CWE359, Category.CWE200, Category.CWE213, Category.NONE)));
     }
     if(disable != 69) {
     	IFeature methodInvocationNameLogout = new MethodInvocationName(cp,
@@ -566,7 +582,7 @@ public class FeatureHandler {
             addFeature(methodInvocationNameLogout,
                 new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
                     Category.AUTHENTICATION_TO_LOW,
-                    Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                    Category.CWE213, Category.NONE)));
     }    
     if(disable != 70) {
     	IFeature methodInvocationNameSecurity = new MethodInvocationName(cp,
@@ -582,8 +598,8 @@ public class FeatureHandler {
                 "credential");
         ((WeightedFeature)methodInvocationNameCredential).setWeight(0);
             addFeature(methodInvocationNameCredential,
-                new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-                    Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL, Category.SOURCE,
+                    Category.CWE200, Category.CWE359, Category.CWE213, Category.NONE)));
     }
     if(disable != 72) {
     	IFeature methodInvocationNameBind = new MethodInvocationName(cp, "bind");
@@ -606,13 +622,13 @@ public class FeatureHandler {
     	IFeature methodInvocationNameGet = new MethodInvocationName(cp, "get");
         ((WeightedFeature)methodInvocationNameGet).setWeight(6);
         addFeature(methodInvocationNameGet,
-            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE200)));
     }
     if(disable != 75) {
     	IFeature methodInvocationNameRead = new MethodInvocationName(cp, "read");
         ((WeightedFeature)methodInvocationNameRead).setWeight(-3);
         addFeature(methodInvocationNameRead,
-            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE200)));
     }
     if(disable != 76) {
     	IFeature methodInvocationNameDecode = new MethodInvocationName(cp, "decod");
@@ -631,7 +647,7 @@ public class FeatureHandler {
     	IFeature methodInvocationNameLoad = new MethodInvocationName(cp, "load");
         ((WeightedFeature)methodInvocationNameLoad).setWeight(9);
         addFeature(methodInvocationNameLoad,
-            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE200)));
     }
     if(disable != 79) {
     	IFeature methodInvocationNameRequest = new MethodInvocationName(cp,
@@ -644,20 +660,20 @@ public class FeatureHandler {
     	IFeature methodInvocationNameCreate = new MethodInvocationName(cp, "creat");
         ((WeightedFeature)methodInvocationNameCreate).setWeight(13);
         addFeature(methodInvocationNameCreate,
-            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE))); 
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE200))); 
     }
     if(disable != 81) {
     	IFeature methodInvocationNameOutput = new MethodInvocationName(cp,
                 "output");
         ((WeightedFeature)methodInvocationNameOutput).setWeight(0);
             addFeature(methodInvocationNameOutput,
-                new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE, Category.CWE201, Category.CWE538)));
     }
     if(disable != 82) {
     	IFeature methodInvocationNameWrit = new MethodInvocationName(cp, "writ");
         ((WeightedFeature)methodInvocationNameWrit).setWeight(13);
         addFeature(methodInvocationNameWrit,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE201, Category.CWE538)));
     }
     if(disable != 83) {
     	IFeature methodInvocationNameSet = new MethodInvocationName(cp, "set");
@@ -675,7 +691,7 @@ public class FeatureHandler {
     	IFeature methodInvocationNameSend = new MethodInvocationName(cp, "send");
         ((WeightedFeature)methodInvocationNameSend).setWeight(13);
         addFeature(methodInvocationNameSend,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE201, Category.CWE538)));
     }
     if(disable != 86) {
     	IFeature methodInvocationNameHandl = new MethodInvocationName(cp, "handl");
@@ -693,7 +709,7 @@ public class FeatureHandler {
     	IFeature methodInvocationNameAdd = new MethodInvocationName(cp, "log");
         ((WeightedFeature)methodInvocationNameAdd).setWeight(4);
         addFeature(methodInvocationNameAdd,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE200)));
     }
     if(disable != 89) {
     	IFeature methodInvocationNameRun = new MethodInvocationName(cp, "run");
@@ -719,7 +735,7 @@ public class FeatureHandler {
     	IFeature methodInvocationNamePrint = new MethodInvocationName(cp, "print");
         ((WeightedFeature)methodInvocationNamePrint).setWeight(10);
         addFeature(methodInvocationNamePrint,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE200)));
     }
     if(disable != 93) {
     	IFeature methodInvocationNamePars = new MethodInvocationName(cp, "pars");
@@ -732,14 +748,14 @@ public class FeatureHandler {
                 "makedb");
         ((WeightedFeature)methodInvocationNameMakedb).setWeight(-8);
             addFeature(methodInvocationNameMakedb,
-                new HashSet<>(Arrays.asList(Category.CWE089, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE202, Category.CWE201, Category.NONE)));
     }
     if(disable != 95) {
     	IFeature methodInvocationNameExecute = new MethodInvocationName(cp,
                 "execute");
         ((WeightedFeature)methodInvocationNameExecute).setWeight(12);
             addFeature(methodInvocationNameExecute,
-                new HashSet<>(Arrays.asList(Category.CWE078, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE213, Category.NONE)));
     }
     if(disable != 96) {
     	IFeature methodInvocationNameSaniti = new MethodInvocationName(cp,
@@ -755,8 +771,7 @@ public class FeatureHandler {
         addFeature(methodIsConstructor,
             new HashSet<>(Arrays.asList(Category.SOURCE, Category.SINK,
                 Category.SANITIZER, Category.AUTHENTICATION_TO_LOW, Category.AUTHENTICATION_TO_HIGH,
-                Category.AUTHENTICATION_NEUTRAL, Category.CWE078, Category.CWE862,
-                Category.CWE863, Category.CWE089, Category.NONE)));
+                Category.AUTHENTICATION_NEUTRAL, Category.CWE200, Category.NONE)));
     }
     if(disable != 98) {
     	IFeature realSetter = new MethodIsRealSetterFeature(cp);
@@ -810,7 +825,7 @@ public class FeatureHandler {
         addFeature(methodNameStartsWithSet,
             new HashSet<>(Arrays.asList(Category.SINK, Category.SANITIZER,
                 Category.AUTHENTICATION_NEUTRAL, Category.AUTHENTICATION_TO_HIGH,
-                Category.AUTHENTICATION_TO_LOW, Category.CWE079, Category.NONE)));
+                Category.AUTHENTICATION_TO_LOW, Category.CWE200, Category.NONE)));
     }
     if(disable != 105) {
     	IFeature methodNameStartsWithPut = new MethodNameStartsWithFeature("put");
@@ -840,7 +855,7 @@ public class FeatureHandler {
         ((WeightedFeature)methodNameStartsOpen).setWeight(2);
         addFeature(methodNameStartsOpen,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-                Category.AUTHENTICATION_TO_HIGH, 
+                Category.AUTHENTICATION_TO_HIGH, Category.CWE200,
                 Category.NONE)));
     }
     if(disable != 109) {
@@ -848,7 +863,7 @@ public class FeatureHandler {
         ((WeightedFeature)methodNameStartsClose).setWeight(0);
         addFeature(methodNameStartsClose,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-                 Category.AUTHENTICATION_TO_LOW,
+                Category.AUTHENTICATION_TO_LOW, Category.CWE200,
                 Category.NONE)));
     }
     if(disable != 110) {
@@ -856,7 +871,7 @@ public class FeatureHandler {
         ((WeightedFeature)methodNameStartsCreate).setWeight(-4);
         addFeature(methodNameStartsCreate,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-                Category.AUTHENTICATION_TO_HIGH, 
+                Category.AUTHENTICATION_TO_HIGH, Category.CWE200,
                 Category.NONE)));
     }
     if(disable != 111) {
@@ -864,7 +879,7 @@ public class FeatureHandler {
         ((WeightedFeature)methodNameStartsDelete).setWeight(22);
         addFeature(methodNameStartsDelete,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
-                 Category.AUTHENTICATION_TO_LOW,
+                 Category.AUTHENTICATION_TO_LOW, Category.CWE200,
                 Category.NONE)));
     }
     if(disable != 112) {
@@ -872,26 +887,26 @@ public class FeatureHandler {
         IFeature nameEqualsLog = new MethodNameEqualsFeature("log");
         ((WeightedFeature)nameEqualsLog).setWeight(-8);
         addFeature(nameEqualsLog,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));    
+            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE200, Category.NONE)));    
     }
     if(disable != 113) {
     	IFeature nameEqualsSetHeader = new MethodNameEqualsFeature("setHeader");
         ((WeightedFeature)nameEqualsSetHeader).setWeight(9);
         addFeature(nameEqualsSetHeader,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE079, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
     }
     if(disable != 114) {
     	IFeature nameEqualsSendRedirect = new MethodNameEqualsFeature("sendRedirect");
         ((WeightedFeature)nameEqualsSendRedirect).setWeight(-8);
         addFeature(nameEqualsSendRedirect,
-            new HashSet<>(Arrays.asList(Category.CWE601, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.CWE201, Category.CWE200, Category.NONE)));
     }
     if(disable != 115) {
     	// Method Contains Name. 
         IFeature methodNameContainsSaniti = new MethodNameContainsFeature("saniti");
         ((WeightedFeature)methodNameContainsSaniti).setWeight(-3);
         addFeature(methodNameContainsSaniti,
-            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.CWE078, Category.CWE079, Category.CWE089, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.NONE)));
         
     }
     if(disable != 116) {
@@ -940,7 +955,7 @@ public class FeatureHandler {
         addFeature(methodNameContainsAuthen,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_NEUTRAL,
                 Category.AUTHENTICATION_TO_HIGH, Category.AUTHENTICATION_TO_LOW,
-                Category.CWE306, Category.NONE)));
+                Category.CWE200, Category.NONE)));
     }
     if(disable != 123) {
     	IFeature methodNameContainsCheck = new MethodNameContainsFeature("check");
@@ -973,7 +988,7 @@ public class FeatureHandler {
         addFeature(methodNameContainsLogin,
             new HashSet<>(Arrays.asList(
                 Category.AUTHENTICATION_TO_HIGH, 
-                Category.CWE306, Category.NONE)));
+                Category.CWE200, Category.NONE)));
         
     }
     if(disable != 127) {
@@ -981,15 +996,14 @@ public class FeatureHandler {
                 "loginpage");
         ((WeightedFeature)methodNameContainsNotLoginPage).setWeight(43);
             addFeature(methodNameContainsNotLoginPage,
-                new HashSet<>(Arrays.asList(Category.CWE306, Category.CWE862,
-                    Category.CWE863, Category.NONE)));
+                new HashSet<>(Arrays.asList(Category.CWE200, Category.NONE)));
     }
     if(disable != 128) {
     	IFeature methodNameContainsLogout = new MethodNameContainsFeature("logout");
         ((WeightedFeature)methodNameContainsLogout).setWeight(-8);
         addFeature(methodNameContainsLogout,
             new HashSet<>(Arrays.asList(Category.AUTHENTICATION_TO_LOW,
-                Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                Category.CWE200, Category.NONE)));
     }
     if(disable != 129) {
     	IFeature methodNameContainsConnect = new MethodNameContainsFeature(
@@ -998,7 +1012,7 @@ public class FeatureHandler {
             addFeature(methodNameContainsConnect,
                 new HashSet<>(Arrays.asList(
                     Category.AUTHENTICATION_TO_HIGH, 
-                    Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                    Category.CWE200, Category.CWE201, Category.CWE213, Category.NONE)));
     }
     if(disable != 130) {
     	IFeature methodNameContainsDisconnect = new MethodNameContainsFeature(
@@ -1006,7 +1020,7 @@ public class FeatureHandler {
         ((WeightedFeature)methodNameContainsDisconnect).setWeight(31);
             addFeature(methodNameContainsDisconnect,
                 new HashSet<>(Arrays.asList( Category.AUTHENTICATION_TO_LOW,
-                    Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+                Category.CWE200, Category.CWE201, Category.CWE213, Category.NONE)));
     }
     if(disable != 131) {
     	IFeature methodNameContainsBind = new MethodNameContainsFeature("bind",
@@ -1029,7 +1043,7 @@ public class FeatureHandler {
     	IFeature nameContaisRead = new MethodNameContainsFeature("read", "thread");
         ((WeightedFeature)nameContaisRead).setWeight(-8);
 	    addFeature(nameContaisRead,
-	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE601, Category.NONE)));
+	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE200, Category.NONE)));
     }
     if(disable != 134) {
     	IFeature nameContainsLoad = new MethodNameContainsFeature("load",
@@ -1091,13 +1105,13 @@ public class FeatureHandler {
     	 IFeature nameContainsName = new MethodNameContainsFeature("Name");
         ((WeightedFeature)nameContainsName).setWeight(1);
          addFeature(nameContainsName,
-             new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
+             new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE200, Category.NONE)));
     }
     if(disable != 144) {
     	IFeature nameContainsWrit = new MethodNameContainsFeature("writ");
         ((WeightedFeature)nameContainsWrit).setWeight(0);
         addFeature(nameContainsWrit,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE201)));
     }
     if(disable != 145) {
     	IFeature nameContainsUpdat = new MethodNameContainsFeature("updat");
@@ -1109,7 +1123,7 @@ public class FeatureHandler {
     	IFeature nameContainsSend = new MethodNameContainsFeature("send");
         ((WeightedFeature)nameContainsSend).setWeight(-8);
         addFeature(nameContainsSend,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE601, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE201, Category.NONE)));
     }
     if(disable != 147) {
     	IFeature nameContainsHandl = new MethodNameContainsFeature("handl");
@@ -1127,7 +1141,7 @@ public class FeatureHandler {
     	IFeature nameContainsRun = new MethodNameContainsFeature("run");
         ((WeightedFeature)nameContainsRun).setWeight(0);
         addFeature(nameContainsRun, new HashSet<>(
-            Arrays.asList(Category.SINK, Category.CWE078, Category.NONE)));
+            Arrays.asList(Category.SINK, Category.NONE)));
     }
     if(disable != 150) {
     	IFeature nameContainsExecut = new MethodNameContainsFeature("execut");
@@ -1139,13 +1153,13 @@ public class FeatureHandler {
     	IFeature nameContainsExec = new MethodNameContainsFeature("exec");
         ((WeightedFeature)nameContainsExec).setWeight(34);
         addFeature(nameContainsExec,
-            new HashSet<>(Arrays.asList(Category.CWE078, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.CWE213, Category.NONE)));
     }
     if(disable != 152) {
     	IFeature nameContainsCompile = new MethodNameContainsFeature("compile");
         ((WeightedFeature)nameContainsCompile).setWeight(17);
         addFeature(nameContainsCompile,
-            new HashSet<>(Arrays.asList(Category.CWE078, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.CWE213, Category.NONE)));
     }
     if(disable != 153) {
     	IFeature nameContainsDump = new MethodNameContainsFeature("dump");
@@ -1160,40 +1174,40 @@ public class FeatureHandler {
             new HashSet<>(Arrays.asList(Category.SINK, Category.NONE)));
     }
     if(disable != 155) {
-    	IFeature nameContainsExecute = new MethodNameContainsFeature("execute");
+    	IFeature nameContainsExecute = new MethodNameContainsFeature("store");
         ((WeightedFeature)nameContainsExecute).setWeight(8);
         addFeature(nameContainsExecute,
-            new HashSet<>(Arrays.asList(Category.CWE089, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE200, Category.NONE)));
     }
     if(disable != 156) {
     	IFeature nameContainsQuery = new MethodNameContainsFeature("query");
         ((WeightedFeature)nameContainsQuery).setWeight(17);
         addFeature(nameContainsQuery,
-            new HashSet<>(Arrays.asList(Category.CWE089, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.CWE202, Category.NONE)));
     }
     if(disable != 157) {
-    	IFeature nameContainsRole = new MethodNameContainsFeature("role");
+    	IFeature nameContainsRole = new MethodNameContainsFeature("save");
         ((WeightedFeature)nameContainsRole).setWeight(-8);
         addFeature(nameContainsRole, new HashSet<>(
-            Arrays.asList(Category.CWE862, Category.CWE863, Category.NONE)));	
+            Arrays.asList(Category.SOURCE, Category.CWE200, Category.NONE)));	
     }
     if(disable != 158) {
     	IFeature nameContainsAuthori = new MethodNameContainsFeature("authori");
         ((WeightedFeature)nameContainsAuthori).setWeight(0);
         addFeature(nameContainsAuthori, new HashSet<>(
-            Arrays.asList(Category.CWE862, Category.CWE863, Category.NONE)));
+            Arrays.asList(Category.CWE200, Category.NONE)));
     }
     if(disable != 159) {
     	IFeature nameContainsRedirect = new MethodNameContainsFeature("redirect");
         ((WeightedFeature)nameContainsRedirect).setWeight(17);
         addFeature(nameContainsRedirect,
-            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE601, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK, Category.CWE200, Category.NONE)));
     }
     if(disable != 160) {
     	IFeature methodNameContainsGetParameter = new MethodNameContainsFeature("getParameter");
         ((WeightedFeature)methodNameContainsGetParameter).setWeight(-8);
         addFeature(methodNameContainsGetParameter,
-            new HashSet<>(Arrays.asList(Category.CWE601, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.CWE200, Category.NONE)));
     }
     if(disable != 161) {
     	IFeature returnsConstant = new MethodReturnsConstantFeature(cp);
@@ -1209,8 +1223,8 @@ public class FeatureHandler {
         addFeature(parameterOfTypeString,
             new HashSet<>(Arrays.asList(Category.SOURCE, Category.SINK,
                 Category.SANITIZER, Category.AUTHENTICATION_NEUTRAL,
-                Category.AUTHENTICATION_TO_HIGH, Category.CWE089, Category.CWE306,
-                Category.CWE078, Category.CWE862, Category.CWE863, Category.CWE079, Category.NONE)));
+                Category.AUTHENTICATION_TO_HIGH, Category.CWE200, Category.CWE201,
+                Category.CWE213, Category.NONE)));
     }
     if(disable != 163) {
     	IFeature parameterOfTypeCharArray = new ParameterContainsTypeOrNameFeature(
@@ -1249,39 +1263,39 @@ public class FeatureHandler {
     	IFeature parameterOfTypeIo = new ParameterContainsTypeOrNameFeature(".io.");
         ((WeightedFeature)parameterOfTypeIo).setWeight(-3);
 	    addFeature(parameterOfTypeIo, new HashSet<>(
-	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+	        Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE200, Category.NONE)));
     }
     if(disable != 168) {
     	IFeature parameterOfTypeWeb = new ParameterContainsTypeOrNameFeature("web");
         ((WeightedFeature)parameterOfTypeWeb).setWeight(22);
 	    addFeature(parameterOfTypeWeb, new HashSet<>(
-	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+	        Arrays.asList(Category.SOURCE, Category.SINK, Category.CWE201, Category.NONE)));
     }
     if(disable != 169) {
     	IFeature parameterOfTypeSql = new ParameterContainsTypeOrNameFeature("sql");
         ((WeightedFeature)parameterOfTypeSql).setWeight(2);
 	    addFeature(parameterOfTypeSql, new HashSet<>(Arrays.asList(Category.SOURCE,
-	        Category.SINK, Category.CWE089, Category.NONE)));
+	        Category.SINK, Category.CWE202, Category.NONE)));
     }
     if(disable != 170) {
     	 IFeature parameterOfTypeDb = new ParameterContainsTypeOrNameFeature("db");
         ((WeightedFeature)parameterOfTypeDb).setWeight(12);
  	    addFeature(parameterOfTypeDb, new HashSet<>(
- 	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE)));
+ 	        Arrays.asList(Category.SOURCE, Category.SINK, Category.NONE, Category.CWE202)));
     }
     if(disable != 171) {
     	IFeature parameterOfTypeCredential = new ParameterContainsTypeOrNameFeature(
     	        "credential");
         ((WeightedFeature)parameterOfTypeCredential).setWeight(137);
     	    addFeature(parameterOfTypeCredential,
-    	        new HashSet<>(Arrays.asList(Category.CWE306, Category.CWE862,
-    	            Category.CWE863, Category.CWE078, Category.NONE)));    
+    	        new HashSet<>(Arrays.asList(Category.SOURCE, Category.CWE359, Category.CWE200,
+    	            Category.CWE201, Category.CWE213, Category.NONE)));    
     }
     if(disable != 172) {
     	IFeature parameterOfTypeUrl = new ParameterContainsTypeOrNameFeature("url");
         ((WeightedFeature)parameterOfTypeUrl).setWeight(21);
 	    addFeature(parameterOfTypeUrl, new HashSet<>(
-	        Arrays.asList(Category.CWE601, Category.NONE)));
+	        Arrays.asList(Category.CWE201, Category.NONE)));
     }
     if(disable != 173) {
     	// Parameter flows to return value.
@@ -1377,46 +1391,45 @@ public class FeatureHandler {
         ((WeightedFeature)paramTypeMathcesReturn).setWeight(-5);
         addFeature(paramTypeMathcesReturn,
             new HashSet<>(Arrays.asList(
-                Category.SANITIZER, Category.CWE078, Category.CWE079, Category.CWE862,
-                Category.CWE863, Category.CWE089, Category.NONE)));
+                Category.SANITIZER, Category.CWE200, Category.CWE213, Category.NONE)));
     }
     if(disable != 188) {
     	// ReturnTypeContainsNameFeature 
         IFeature returnContainsDocument = new ReturnTypeContainsNameFeature(cp, "Document");
         ((WeightedFeature)returnContainsDocument).setWeight(5);
         addFeature(returnContainsDocument,
-            new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE079, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE538, Category.NONE)));
     }
     if(disable != 189) {
     	IFeature returnContainsNode = new ReturnTypeContainsNameFeature(cp, "Node");
         ((WeightedFeature)returnContainsNode).setWeight(11);
         addFeature(returnContainsNode,
-            new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE079, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE)));
         
     }
     if(disable != 190) {
     	IFeature returnContainsUser = new ReturnTypeContainsNameFeature(cp, "User");
         ((WeightedFeature)returnContainsUser).setWeight(-17);
         addFeature(returnContainsUser,
-            new HashSet<>(Arrays.asList(Category.AUTHENTICATION_TO_HIGH,Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE))); 
+            new HashSet<>(Arrays.asList(Category.AUTHENTICATION_TO_HIGH,Category.CWE200, Category.CWE359, Category.CWE213, Category.NONE))); 
     }
     if(disable != 191) {
     	IFeature returnContainsCredential= new ReturnTypeContainsNameFeature(cp, "Credential");
         ((WeightedFeature)returnContainsCredential).setWeight(14);
         addFeature(returnContainsCredential,
-            new HashSet<>(Arrays.asList(Category.AUTHENTICATION_TO_HIGH,Category.CWE306, Category.CWE862, Category.CWE863, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.AUTHENTICATION_TO_HIGH,Category.CWE200, Category.CWE359, Category.CWE213, Category.NONE)));
     }
    if(disable != 192) {
 	   IFeature returnContainsServlet = new ReturnTypeContainsNameFeature(cp, "Servlet");
        ((WeightedFeature)returnContainsServlet).setWeight(-11);
        addFeature(returnContainsServlet,
-           new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE079,Category.CWE078, Category.NONE))); 
+           new HashSet<>(Arrays.asList(Category.SOURCE, Category.NONE))); 
     }
     if(disable != 193) {
     	IFeature returnContainsRequest = new ReturnTypeContainsNameFeature(cp, "Request");
         ((WeightedFeature)returnContainsRequest).setWeight(-8);
         addFeature(returnContainsRequest,
-            new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE079, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SOURCE,Category.CWE200, Category.NONE)));
     }
     if(disable != 194) {
     	// Return types (ReturnTypeFeature).
@@ -1429,7 +1442,7 @@ public class FeatureHandler {
     	IFeature stringReturnType = new ReturnTypeFeature(cp, "java.lang.String");
         ((WeightedFeature)stringReturnType).setWeight(27);
         addFeature(stringReturnType,
-            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.SOURCE, Category.CWE079, Category.CWE078, Category.CWE089, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SANITIZER, Category.SOURCE, Category.CWE200, Category.NONE)));
     }
     if(disable != 196) {
     	IFeature charSequenceReturnType = new ReturnTypeFeature(cp,
@@ -1450,7 +1463,7 @@ public class FeatureHandler {
 	   IFeature resultsetReturnType = new ReturnTypeFeature(cp, "java.sql.ResultSet");
        ((WeightedFeature)resultsetReturnType).setWeight(21);
        addFeature(resultsetReturnType,
-           new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE089)));
+           new HashSet<>(Arrays.asList(Category.SINK, Category.NONE, Category.CWE202)));
     }
     if(disable != 199) {
     	 // Source to return.
@@ -1499,7 +1512,7 @@ public class FeatureHandler {
     	IFeature voidOn = new VoidOnMethodFeature();
         ((WeightedFeature)voidOn).setWeight(5);
         addFeature(voidOn,
-            new HashSet<>(Arrays.asList(Category.SINK,Category.CWE079, Category.NONE)));
+            new HashSet<>(Arrays.asList(Category.SINK,Category.CWE213, Category.NONE)));
     }
     System.out.println("Initialized " + getFeaturesSize() + " features.");
   }

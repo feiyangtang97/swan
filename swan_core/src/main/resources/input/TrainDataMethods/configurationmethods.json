@@ -16,7 +16,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://xml.apache.org/xalan-j/apidocs/org/apache/xalan/xsltc/runtime/BasisLibrary.html",
-	"cwe": ["cwe078","cwe079","cwe089", "cwe601"],
+	"cwe": ["cwe213"],
 	"type": ["sink","sanitizer"],
 	"comment": "String replacement"
 },
@@ -76,7 +76,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/4.3.9.RELEASE/javadoc-api/org/springframework/mock/web/portlet/MockPortletRequest.html",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe213"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -96,7 +96,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "http://people.apache.org/~ruwan/axis2/site/1.6.0/api/org/apache/axis2/description/AxisService.html",
-	"cwe": [],
+	"cwe": ["cwe200"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -116,7 +116,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "",
-	"cwe": ["cwe306"],
+	"cwe": [],
 	"type": ["authentication","source"],
 	"comment": ""
 },
@@ -136,7 +136,7 @@
 	"discovery": "manual",
 	"framework": "jsoup",
 	"link": "https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/nodes/Entities.java",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -156,7 +156,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe200"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -176,7 +176,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe359", "cwe200", "cwe201"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -216,7 +216,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/3.2.6.RELEASE/apidocs/org/springframework/security/core/userdetails/UserDetailsByNameServiceWrapper.html",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe200", "cwe359"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -256,7 +256,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://www.novell.com/documentation/developer/jldap/jldapenu/api/com/novell/ldap/LDAPConnection.html",
-	"cwe": ["cwe863","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Puts the program in a unauthenticated state."
 },
@@ -276,7 +276,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/text/StrSubstitutor.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -296,7 +296,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/DigestScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Produces an authentication string for the given credentials."
 },
@@ -316,7 +316,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/NTLMScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Produces an authentication string for the given credentials."
 },
@@ -336,7 +336,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "",
-	"cwe": [],
+	"cwe": ["cwe200", "cwe538"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -356,7 +356,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "http://commons.apache.org/proper/commons-jxpath/apidocs/org/apache/commons/jxpath/ri/parser/XPathParser.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -375,7 +375,7 @@
 	"securityLevel": "low",
 	"discovery": "manual",
 	"framework": "spring",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe201"],
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jca/cci/connection/SingleConnectionFactory.html",
 	"type": ["authentication"],
 	"comment": "Puts the state of the program to unauthenticated."
@@ -416,7 +416,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200","cwe213"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -456,9 +456,9 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://github.com/spring-projects/spring-security/blob/master/config/src/main/java/org/springframework/security/config/http/FormLoginBeanDefinitionParser.java",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
-	"comment": "Counter example for authentications and cwe306"
+	"comment": "Counter example for authentications"
 },
 {
 	"name": "org.apache.commons.httpclient.auth.BasicScheme.authenticate",
@@ -476,7 +476,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe538"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -496,7 +496,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/XmlRpcServletServer.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Counter example for sanitizer (set)"
 },
@@ -516,7 +516,7 @@
 	"discovery": "manual",
 	"framework": "pebble",
 	"link": "http://help.collab.net/index.jsp?topic=/iaf-700/pebble-soap-javadocs/net/sourceforge/pebble/domain/Comment.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe538"],
 	"type": ["authentication","sink"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -536,7 +536,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/NTLMScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided. The authentication string is returned."
 },
@@ -556,7 +556,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/HttpServletRequestImpl.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Counter example for sanitizer."
 },
@@ -576,7 +576,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/java/lang/String.html",
-	"cwe": ["cwe078","cwe079","cwe089", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["sink","sanitizer"],
 	"comment": "String manipulation"
 },
@@ -596,7 +596,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "http://google.github.io/google-auth-library-java/releases/0.6.0/apidocs/com/google/auth/oauth2/UserCredentials.html",
-	"cwe": [],
+	"cwe": ["cwe200", "cwe359"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -616,7 +616,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/HttpServletResponseImpl.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe201"],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -676,7 +676,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/socket/server/support/WebSocketHttpRequestHandler.html",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe201"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -716,7 +716,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/server/ReflectiveXmlRpcHandler.html",
-	"cwe": ["cwe078", "cwe079"],
+	"cwe": ["cwe201"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -736,7 +736,7 @@
 	"discovery": "manual",
 	"framework": "java",
 	"link": "",
-	"cwe": ["cwe089"],
+	"cwe": ["cwe202"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -756,7 +756,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359", "cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -816,7 +816,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/sonatype/WebGoat/blob/master/src/main/java/org/owasp/webgoat/controller/Logout.java",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program in an un-authenticated state."
 },
@@ -856,7 +856,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/4.0.0.M1/apidocs/index.html?org/springframework/security/config/annotation/authentication/builders/AuthenticationManagerBuilder.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359", "cwe200"],
 	"type": ["authentication"],
 	"comment": "the method returns a configurator for manipulation of users' details. The return object is authenticated and the owner may execute critical ops."
 },
@@ -876,7 +876,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/4.0.0.M1_to_4.2.0.M2/Spring%20Framework%204.0.0.M1/org/springframework/test/context/transaction/TransactionalTestExecutionListener.html",
-	"cwe": ["cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -896,7 +896,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/tags/UrlTag.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe201"],
 	"type": ["source", "sink"],
 	"comment": "Source training set"
 },
@@ -956,7 +956,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/3.2.9.RELEASE/apidocs/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted. So the security level depentd on this fact."
 },
@@ -976,7 +976,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/subject/support/DelegatingSubject.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Logout"
 },
@@ -1016,7 +1016,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://github.com/apache/stratos/blob/master/components/org.apache.stratos.cli/src/main/java/org/apache/stratos/cli/StratosApplication.java",
-	"cwe": ["cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1036,7 +1036,7 @@
 	"discovery": "manual",
 	"framework": "pebble",
 	"link": "https://github.com/PebbleTemplates/pebble/blob/master/src/main/java/com/mitchellbosecke/pebble/utils/PathUtils.java",
-	"cwe": ["cwe078","cwe079","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -1056,7 +1056,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/sonatype/WebGoat/blob/master/src/main/java/org/owasp/webgoat/session/ParameterParser.java",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1096,7 +1096,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/text/StrSubstitutor.html",
-	"cwe": ["cwe078","cwe079","cwe089", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -1116,7 +1116,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/HttpAuthenticator.html",
-	"cwe": ["cwe862","cwe306"],
+	"cwe": ["cwe200", "cwe201"],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided in the HttpState. The authentication is added to the header of the HttpMethod."
 },
@@ -1136,7 +1136,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/SPNegoScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200", "cwe201"],
 	"type": ["authentication"],
 	"comment": "The authentication string is calculated from the credentials and returned as a header."
 },
@@ -1156,7 +1156,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/4.3.9.RELEASE/javadoc-api/org/springframework/mock/web/MockHttpServletRequest.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The authentication is added to the response."
 },
@@ -1176,7 +1176,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "",
-	"cwe": ["cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Returnes whether the program is connected."
 },
@@ -1216,7 +1216,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "Login"
 },
@@ -1236,7 +1236,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/XmlRpcServletServer.html",
-	"cwe": ["cwe078", "cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1255,7 +1255,7 @@
 	"securityLevel": "high",
 	"discovery": "manual",
 	"framework": "spring",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jms/connection/UserCredentialsConnectionFactoryAdapter.html",
 	"type": ["authentication"],
 	"comment": ""
@@ -1276,7 +1276,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/3.1.8.CI-SNAPSHOT/apidocs/org/springframework/security/authentication/rcp/RemoteAuthenticationProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The input object is authenticated and returned."
 },
@@ -1296,7 +1296,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "http://grepcode.com/file/repo1.maven.org/maven2/org.apache.xmlrpc/xmlrpc-server/3.1/org/apache/xmlrpc/webserver/ServletOutputStreamImpl.java",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe201", "cwe538"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1316,7 +1316,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/NTLMScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided. The authentication string is returned."
 },
@@ -1356,7 +1356,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/Connection.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1456,7 +1456,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://commons.apache.org/proper/commons-bcel/apidocs/org/apache/bcel/util/JavaWrapper.html",
-	"cwe": ["cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1496,7 +1496,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "https://github.com/google/google-auth-library-java/blob/master/oauth2_http/java/com/google/auth/oauth2/DefaultCredentialsProvider.java",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe359", "cwe200", "cwe201"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -1516,7 +1516,7 @@
 	"discovery": "manual",
 	"framework": "pebble",
 	"link": "http://help.collab.net/topic/iaf-700/pebble-soap-javadocs/net/sourceforge/pebble/util/SecurityUtils.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Puts the state of the program to unauthenticated."
 },
@@ -1536,7 +1536,7 @@
 	"discovery": "manual",
 	"framework": "apachecommons",
 	"link": "https://hc.apache.org/httpclient-3.x/xref/org/apache/commons/httpclient/HttpMethodDirector.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe201"],
 	"type": ["authentication"],
 	"comment": "The authentication string is added to the http method."
 },
@@ -1616,7 +1616,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/NegotiateScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "Produces an authentication string for the given credentials."
 },
@@ -1636,7 +1636,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/KerberosScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "The authentication string is calculated from the credentials and returned as a header."
 },
@@ -1656,7 +1656,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.6/apidocs/org/apache/shiro/mgt/DefaultSecurityManager.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "Login the specified subject with the tocken and return the subject."
 },
@@ -1676,7 +1676,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html",
-	"cwe": ["cwe089"],
+	"cwe": ["cwe202"],
 	"type": ["sink"],
 	"comment": "sql query"
 },
@@ -1716,7 +1716,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/WebGoat/WebGoat-Legacy/blob/master/src/main/java/org/owasp/webgoat/session/DatabaseUtilities.java",
-	"cwe": ["cwe306","cwe089"],
+	"cwe": ["cwe202"],
 	"type": ["authentication","sink"],
 	"comment": "creates a database connection"
 },
@@ -1756,7 +1756,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/3.1.8.CI-SNAPSHOT/apidocs/org/springframework/security/authentication/AnonymousAuthenticationProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The input object is authenticated and returned."
 },
@@ -1776,7 +1776,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/authentication/jaas/SecurityContextLoginModule.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -1816,7 +1816,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html",
-	"cwe": ["cwe089"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1856,7 +1856,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/subject/support/DelegatingSubject.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Login with the tocken."
 },
@@ -1896,7 +1896,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/OWASP/WebGoat/blob/master/webgoat/src/main/java/org/owasp/webgoat/HammerHead.java",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1916,7 +1916,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/server/XmlRpcServerWorker.html",
-	"cwe": ["cwe079", "cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -1936,7 +1936,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -1956,7 +1956,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/OWASP/WebGoat/blob/master/webgoat/src/main/java/org/owasp/webgoat/session/WebSession.java",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -1996,7 +1996,7 @@
 	"discovery": "manual",
 	"framework": "pebble",
 	"link": "http://help.collab.net/index.jsp?topic=/iaf-700/pebble-soap-javadocs/net/sourceforge/pebble/domain/Comment.html",
-	"cwe": ["cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Returnes whether the program is authenticated."
 },
@@ -2076,7 +2076,7 @@
 	"discovery": "manual",
 	"framework": "owaspesapi",
 	"link": "https://static.javadoc.io/org.owasp.esapi/esapi/2.0.1/org/owasp/esapi/Encoder.html",
-	"cwe": ["cwe078","cwe079","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -2136,7 +2136,7 @@
 	"discovery": "manual",
 	"framework": "owaspesapi",
 	"link": "https://static.javadoc.io/org.owasp.esapi/esapi/2.0.1/org/owasp/esapi/reference/validation/CreditCardValidationRule.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -2156,7 +2156,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/sonatype/WebGoat/blob/master/src/main/java/org/owasp/webgoat/session/LessonSession.java",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication","sink"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -2176,7 +2176,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/4.0.0.RELEASE/apidocs/org/springframework/security/config/annotation/authentication/builders/AuthenticationManagerBuilder.html",
-	"cwe": ["cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Authentication to LDAP. The owner of the return object can manipulate users to a LDAP connection."
 },
@@ -2196,7 +2196,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/subject/support/DelegatingSubject.html",
-	"cwe": ["cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Check if the program is authenticated."
 },
@@ -2216,7 +2216,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/DigestScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -2236,7 +2236,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/HttpServletResponseImpl.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Counter example for sanitizer."
 },
@@ -2276,7 +2276,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/orm/hibernate3/support/ClobStringType.html",
-	"cwe": ["cwe089"],
+	"cwe": ["cwe202"],
 	"type": ["sink"],
 	"comment": "depricated method. "
 },
@@ -2296,7 +2296,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/3.2.2.RELEASE/apidocs/org/springframework/security/crypto/codec/Hex.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -2316,7 +2316,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/3.1.8.CI-SNAPSHOT/apidocs/org/springframework/security/authentication/jaas/JaasAuthenticationProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The input object is authenticated and returned."
 },
@@ -2336,7 +2336,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -2356,7 +2356,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "",
-	"cwe": ["cwe862", "cwe306"],
+	"cwe": ["cwe359", "cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -2376,7 +2376,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/BasicScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -2439,7 +2439,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "https://github.com/OWASP/WebGoat/blob/master/webgoat/src/main/java/org/owasp/webgoat/util/HtmlEncoder.java",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -2459,7 +2459,7 @@
 	"discovery": "manual",
 	"framework": "webgoat",
 	"link": "",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe200"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -2499,7 +2499,7 @@
 	"discovery": "manual",
 	"framework": "owaspesapi",
 	"link": "https://static.javadoc.io/org.owasp.esapi/esapi/2.0.1/org/owasp/esapi/Encoder.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -2599,7 +2599,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/4.3.9.RELEASE/javadoc-api/org/springframework/web/socket/sockjs/transport/session/WebSocketServerSockJsSession.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -2619,7 +2619,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/access/intercept/RunAsImplAuthenticationProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The input object is authenticated and returned."
 },
@@ -2679,7 +2679,7 @@
 	"discovery": "manual",
 	"framework": "ldap",
 	"link": "https://github.com/aptivate/openldap-jldap/blob/master/com/novell/ldap/spml/SunIdm.java",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -2759,7 +2759,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/HttpAuthenticator.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided in the HttpState. The authentication is added to the header of the HttpMethod."
 },
@@ -2819,7 +2819,7 @@
 	"discovery": "manual",
 	"framework": "owaspesapi",
 	"link": "https://static.javadoc.io/org.owasp.esapi/esapi/2.0.1/org/owasp/esapi/reference/validation/CreditCardValidationRule.html",
-	"cwe": ["cwe078","cwe079","cwe089"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -2979,7 +2979,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/NegotiateScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "Produces an authentication string for the given credentials."
 },
@@ -2999,7 +2999,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/core/userdetails/User.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe359","cwe200"],
 	"type": ["authentication"],
 	"comment": "Returnes whether the program is authenticated."
 },
@@ -3019,7 +3019,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://xml.apache.org/xalan-j/apidocs/org/apache/xalan/xsltc/compiler/util/Util.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -3039,7 +3039,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/builders/HttpSecurity.html",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Counter example for authentication (none)"
 },
@@ -3079,7 +3079,7 @@
 	"discovery": "manual",
 	"framework": "xmldb",
 	"link": "http://xmldb-org.sourceforge.net/xapi/api/org/xmldb/api/DatabaseManager.html",
-	"cwe": ["cwe306","cwe089", "cwe601"],
+	"cwe": ["cwe201"],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3119,7 +3119,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/auth/DigestScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "When the input is true, the tocken should be trusted."
 },
@@ -3139,7 +3139,7 @@
 	"discovery": "manual",
 	"framework": "owaspesapi",
 	"link": "https://static.javadoc.io/org.owasp.esapi/esapi/2.0.1/org/owasp/esapi/reference/validation/",
-	"cwe": ["cwe078","cwe079","cwe089"],
+	"cwe": ["cwe200"],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3159,7 +3159,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/4.0.0.RELEASE/apidocs/org/springframework/security/config/annotation/authentication/builders/AuthenticationManagerBuilder.html",
-	"cwe": ["cwe306"],
+	"cwe": ["cwe200", "cwe359", "cwe201"],
 	"type": ["authentication"],
 	"comment": "Authentication to JDBC. The owner of the return object can manipulate users to a JDBC connection."
 },
@@ -3179,7 +3179,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/subject/support/DefaultSubjectContext.html",
-	"cwe": ["cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Check if the program is authenticated."
 },
@@ -3199,7 +3199,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/conn/DefaultClientConnection.html",
-	"cwe": ["cwe601"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -3239,7 +3239,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/web/servlet/tags/EscapeBodyTag.html",
-	"cwe": ["cwe601"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3259,7 +3259,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/3.2.2.RELEASE_to_4.0.0.M1/Spring%20Framework%203.2.2.RELEASE/org/springframework/web/util/UrlPathHelper.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3279,7 +3279,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://commons.apache.org/proper/commons-validator/apidocs/org/apache/commons/validator/util/ValidatorUtils.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -3299,7 +3299,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/request/MockHttpServletRequestBuilder.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3319,7 +3319,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "https://github.com/google/google-auth-library-java/blob/master/oauth2_http/java/com/google/auth/oauth2/UserAuthorizer.java",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe200", "cwe359"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3339,7 +3339,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/socket/sockjs/transport/handler/JsonpReceivingTransportHandler.html",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe359", "cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3359,7 +3359,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "https://github.com/google/google-auth-library-java/blob/master/oauth2_http/java/com/google/auth/oauth2/DefaultCredentialsProvider.java",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe359", "cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3379,7 +3379,7 @@
 	"discovery": "manual",
 	"framework": "ldap",
 	"link": "https://www.novell.com/documentation/developer/jldap/jldapenu/api/com/novell/ldap/LDAPConnection.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Puts the program in a unauthenticated state."
 },
@@ -3440,7 +3440,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://github.com/OWASP/java-html-sanitizer/blob/master/src/main/java/org/owasp/html/Encoding.java",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3460,7 +3460,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/http/FormLoginBeanDefinitionParser.html",
-	"cwe": ["cwe863","cwe862","cwe306", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["authentication","source"],
 	"comment": ""
 },
@@ -3480,7 +3480,7 @@
 	"discovery": "manual",
 	"framework": "json",
 	"link": "https://github.com/OWASP/json-sanitizer/blob/master/src/main/java/com/google/json/JsonSanitizer.java",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -3500,7 +3500,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/HttpServletRequestImpl.html",
-	"cwe": ["cwe089", "cwe078", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -3560,7 +3560,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/text/StrSubstitutor.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -3580,7 +3580,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/java/lang/String.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": [],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -3620,7 +3620,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/NTLMScheme.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided. The authentication string is returned."
 },
@@ -3640,7 +3640,7 @@
 	"discovery": "manual",
 	"framework": "ldap",
 	"link": "https://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -3660,7 +3660,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "http://grepcode.com/file/repo1.maven.org/maven2/org.apache.axis2/axis2-kernel/1.4/org/apache/axis2/util/Utils.java",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe213"],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3680,7 +3680,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/auth/HttpAuthenticator.html",
-	"cwe": ["cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "Depricated method. The credentials are provided in the HttpState. The authentication is added to the header of the HttpMethod."
 },
@@ -3740,7 +3740,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://github.com/OWASP/java-html-sanitizer/blob/master/src/main/java/org/owasp/html/HtmlSanitizer.java",
-	"cwe": ["cwe079","cwe306"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3760,7 +3760,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/xref/org/apache/commons/httpclient/HttpMethodDirector.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "The authentication string is added to the http method."
 },
@@ -3780,7 +3780,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/mock/web/MockBodyContent.html",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe201"],
 	"type": ["sink"],
 	"comment": "Sink"
 },
@@ -3800,7 +3800,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://github.com/spring-projects/spring-security/blob/master/config/src/main/java/org/springframework/security/config/http/LogoutBeanDefinitionParser.java",
-	"cwe": ["cwe863","cwe862","cwe306", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["authentication","source"],
 	"comment": ""
 },
@@ -3820,7 +3820,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/crypto/codec/Utf8.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -3960,7 +3960,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring-security/site/docs/current/apidocs/org/springframework/security/config/annotation/web/configurers/LogoutConfigurer.html",
-	"cwe": ["cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication","source"],
 	"comment": ""
 },
@@ -3980,7 +3980,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://static.javadoc.io/org.springframework/spring/2.0.4/org/springframework/orm/hibernate3/LocalDataSourceConnectionProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306","cwe089"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the state of the program to unauthenticated."
 },
@@ -4000,7 +4000,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/4.3.9.RELEASE/javadoc-api/org/springframework/mock/web/MockHttpServletRequest.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -4020,7 +4020,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/HttpAuthenticator.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Depricated method. The authentication string is added to the http response."
 },
@@ -4040,7 +4040,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/spring/docs/3.2.8.RELEASE_to_3.2.9.RELEASE/Spring%20Framework%203.2.8.RELEASE/org/springframework/web/util/OpaqueUriComponents.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -4140,7 +4140,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://docs.spring.io/autorepo/docs/spring-security/3.2.1.RELEASE/apidocs/org/springframework/security/crypto/codec/Base64.html",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": [],
 	"type": ["sanitizer"],
 	"comment": ""
 },
@@ -4160,7 +4160,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/java/lang/String.html",
-	"cwe": ["cwe078","cwe079","cwe306","cwe089", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["sink","sanitizer"],
 	"comment": ""
 },
@@ -4200,7 +4200,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/webserver/RequestData.html",
-	"cwe": ["cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
 	"comment": "Counter example for sanitizer."
 },
@@ -4220,7 +4220,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://hc.apache.org/httpclient-3.x/xref/org/apache/commons/httpclient/HttpMethodDirector.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": [],
 	"type": ["authentication"],
 	"comment": "The authentication string is added to the http method."
 },
@@ -4240,7 +4240,7 @@
 	"discovery": "manual",
 	"framework": "oauth2essentials",
 	"link": "https://github.com/dmfs/oauth2-essentials/blob/master/src/main/java/org/dmfs/oauth2/client/BasicOAuth2ClientCredentials.java",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "Sends an authentication request."
 },
@@ -4260,7 +4260,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/javax/security/auth/login/LoginContext.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Puts the program is an unauthenticated state."
 },
@@ -4280,7 +4280,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://shiro.apache.org/static/1.2.6/apidocs/org/apache/shiro/mgt/DefaultSecurityManager.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe213"],
 	"type": ["authentication"],
 	"comment": "Logout the specified subject."
 },
@@ -4360,7 +4360,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "http://docs.spring.io/autorepo/docs/spring-security/3.1.8.CI-SNAPSHOT/apidocs/org/springframework/security/authentication/RememberMeAuthenticationProvider.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "The input object is authenticated and returned."
 },
@@ -4400,7 +4400,7 @@
 	"discovery": "manual",
 	"framework": "ldap",
 	"link": "https://www.novell.com/documentation/developer/jldap/jldapenu/api/com/novell/ldap/LDAPConnection.html",
-	"cwe": ["cwe863","cwe862","cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication"],
 	"comment": "Create a connection to the host and port. "
 },
@@ -4460,7 +4460,7 @@
 	"discovery": "manual",
 	"framework": "spring",
 	"link": "https://github.com/spring-projects/spring-framework/blob/master/spring-websocket/src/main/java/org/springframework/web/socket/config/HandlersBeanDefinitionParser.java",
-	"cwe": ["cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source","sink"],
 	"comment": "Source training set"
 },
@@ -4480,7 +4480,7 @@
 	"discovery": "manual",
 	"framework": "scribejava",
 	"link": "https://github.com/scribejava/scribejava/blob/master/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuth20Service.java",
-	"cwe": ["cwe306"],
+	"cwe": ["cwe200"],
 	"type": ["authentication","sink"],
 	"comment": "Returns a tocken for the given request."
 },
@@ -4500,7 +4500,7 @@
 	"discovery": "manual",
 	"framework": "oauth",
 	"link": "",
-	"cwe": ["cwe862"],
+	"cwe": ["cwe200", "cwe359"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -4520,7 +4520,7 @@
 	"discovery": "manual",
 	"framework": "scribejava",
 	"link": "https://github.com/scribejava/scribejava/blob/master/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuth20Service.java",
-	"cwe": ["cwe306"],
+	"cwe": [],
 	"type": ["authentication","sink"],
 	"comment": "Authenticates the request"
 },
@@ -4540,7 +4540,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "",
-	"cwe": ["cwe079", "cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
 	"comment": "Source training set"
 },
@@ -4560,7 +4560,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://ws.apache.org/xmlrpc/apidocs/org/apache/xmlrpc/client/XmlRpcClient.html",
-	"cwe": ["cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": "Performes a request for the method provided as the first argument."
 },
@@ -4580,7 +4580,7 @@
 	"discovery": "manual",
 	"framework": "generaljava",
 	"link": "https://docs.oracle.com/javase/7/docs/api/java/lang/Runtime.html#exec(java.lang.String)",
-	"cwe": ["cwe078"],
+	"cwe": ["cwe200"],
 	"type": ["sink"],
 	"comment": ""
 },
@@ -4600,7 +4600,7 @@
 	"discovery": "manual",
 	"framework": "apache",
 	"link": "https://xml.apache.org/xalan-j/apidocs/org/apache/xpath/jaxp/XPathImpl.html",
-	"cwe": ["cwe078"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": ""
 },
@@ -4620,7 +4620,7 @@
 	"discovery": "manual",
 	"framework": "jsoup",
 	"link": "https://jsoup.org/apidocs/org/jsoup/parser/Parser.html#parseInput-java.lang.String-java.lang.String-",
-	"cwe": ["cwe079"],
+	"cwe": ["cwe200", "cwe359"],
 	"type": ["source", "sink"],
 	"comment": ""
 },
@@ -4640,7 +4640,7 @@
 	"discovery": "manual",
 	"framework": "jsoup",
 	"link": "https://jsoup.org/apidocs/org/jsoup/nodes/Node.html#before-java.lang.String-",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": ""
 },
@@ -4660,7 +4660,7 @@
 	"discovery": "manual",
 	"framework": "jsoup",
 	"link": "https://jsoup.org/apidocs/org/jsoup/nodes/Node.html#before-java.lang.String-",
-	"cwe": ["cwe079"],
+	"cwe": [],
 	"type": ["sink"],
 	"comment": ""
 },
@@ -4680,7 +4680,7 @@
 	"discovery": "manual",
 	"framework": "javageneral",
 	"link": "https://docs.oracle.com/javaee/6/api/javax/servlet/ServletRequestWrapper.html",
-	"cwe": ["cwe601"],
+	"cwe": ["cwe200"],
 	"type": ["source"],
 	"comment": ""
 },
@@ -4700,7 +4700,7 @@
 	"discovery": "manual",
 	"framework": "javageneral",
 	"link": "https://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletResponseWrapper.html",
-	"cwe": ["cwe601"],
+	"cwe": ["cwe538"],
 	"type": ["sink"],
 	"comment": ""
 }
@@ -4718,159 +4718,44 @@
 		},
 
 		{
-			"id": "cwe089",
-			"name": "Improper Neutralization of Special Elements used in an SQL Command",
-			"short": "SQL Injection", 
-			"link": "http://cwe.mitre.org/top25/#CWE-89"
+			"id": "cwe359",
+			"name": "Exposure of Private Personal Information to an Unauthorized Actor",
+			"short": "Personal Information Exposure", 
+			"link": "https://cwe.mitre.org/data/definitions/359.html"
 		},
 
 		{
-			"id": "cwe078",
-			"name": "Improper Neutralization of Special Elements used in an OS Command",
-			"short": "OS Command Injection",
-			"link": "http://cwe.mitre.org/top25/#CWE-78"
+			"id": "cwe201",
+			"name": "Insertion of Sensitive Information Into Sent Data",
+			"short": "Sensitive Information Sent Out",
+			"link": "https://cwe.mitre.org/data/definitions/201.html"
 		},
 
 		{
-			"id": "cwe120",
-			"name": "Buffer Copy without Checking Size of Input",
-			"short": "Buffer Overflow",
-			"link": "http://cwe.mitre.org/top25/#CWE-120"
+			"id": "cwe200",
+			"name": "Exposure of Sensitive Information to an Unauthorized Actor",
+			"short": "Sensitive Information Exposure",
+			"link": "https://cwe.mitre.org/data/definitions/200.html"
 		},
 
 		{
-			"id": "cwe079",
-			"name": "Improper Neutralization of Input During Web Page Generation",
-			"short": "Cross-site Scripting",
-			"link": "http://cwe.mitre.org/top25/#CWE-79"
+			"id": "cwe202",
+			"name": "Exposure of Sensitive Information Through Data Queries",
+			"link": "https://cwe.mitre.org/data/definitions/202.html"
 		},
 
 		{
-			"id": "cwe306",
-			"name": "Missing Authentication for Critical Function",
-			"link": "http://cwe.mitre.org/top25/#CWE-306"
+			"id": "cwe538",
+			"name": "Insertion of Sensitive Information into Externally-Accessible File or Directory",
+			"link": "https://cwe.mitre.org/data/definitions/538.html"
 		},
 
 		{
-			"id": "cwe862",
-			"name": "Missing Authorization",
-			"link": "http://cwe.mitre.org/top25/#CWE-862"
-		},
-
-		{
-			"id": "cwe798",
-			"name": "Use of Hard-coded Credentials",
-			"link": "http://cwe.mitre.org/top25/#CWE-798"
-		},
-
-		{
-			"id": "cwe311",
-			"name": "Missing Encryption of Sensitive Data",
-			"link": "http://cwe.mitre.org/top25/#CWE-311"
-		},
-
-		{
-			"id": "cwe434",
-			"name": "Unrestricted Upload of File with Dangerous Type",
-			"link": "http://cwe.mitre.org/top25/#CWE-434"
-		},
-
-		{
-			"id": "cwe807",
-			"name": "Reliance on Untrusted Inputs in a Security Decision",
-			"link": "http://cwe.mitre.org/top25/#CWE-807"
-		},
-
-		{
-			"id": "cwe250",
-			"name": "Execution with Unnecessary Privileges",
-			"link": "http://cwe.mitre.org/top25/#CWE-250"
-		},
-
-		{
-			"id": "cwe352",
-			"name": "Cross-Site Request Forgery",
-			"link": "http://cwe.mitre.org/top25/#CWE-352"
-		},
-
-		{
-			"id": "cwe022",
-			"name": "Improper Limitation of a Pathname to a Restricted Directory",
-			"short": "Path Traversal",
-			"link": "http://cwe.mitre.org/top25/#CWE-22"
-		},
-
-		{
-			"id": "cwe494",
-			"name": "Download of Code Without Integrity Check",
-			"link": "http://cwe.mitre.org/top25/#CWE-494"
-		},
-
-		{
-			"id": "cwe863",
-			"name": "Incorrect Authorization",
-			"link": "http://cwe.mitre.org/top25/#CWE-863"
-		},
-
-		{
-			"id": "cwe829",
-			"name": "Inclusion of Functionality from Untrusted Control Sphere",
-			"link": "http://cwe.mitre.org/top25/#CWE-829"
-		},
-
-		{
-			"id": "cwe732",
-			"name": "Incorrect Permission Assignment for Critical Resource",
-			"link": "http://cwe.mitre.org/top25/#CWE-732"
-		},
-
-		{
-			"id": "cwe676",
-			"name": "Use of Potentially Dangerous Function",
-			"link": "http://cwe.mitre.org/top25/#CWE-676"
-		},
-
-		{
-			"id": "cwe327",
-			"name": "Use of a Broken or Risky Cryptographic Algorithm",
-			"link": "http://cwe.mitre.org/top25/#CWE-327"
-		},
-
-		{
-			"id": "cwe131",
-			"name": "Incorrect Calculation of Buffer Size",
-			"link": "http://cwe.mitre.org/top25/#CWE-131"
-		},
-
-		{
-			"id": "cwe307",
-			"name": "Improper Restriction of Excessive Authentication Attempts",
-			"link": "http://cwe.mitre.org/top25/#CWE-307"
-		},
-
-		{
-			"id": "cwe601",
-			"name": "URL Redirection to Untrusted Site",
-			"short": "Open Redirect",
-			"link": "http://cwe.mitre.org/top25/#CWE-601"
-		},
-
-		{
-			"id": "cwe134",
-			"name": "Uncontrolled Format String",
-			"link": "http://cwe.mitre.org/top25/#CWE-134"
-		},
-
-		{
-			"id": "cwe190",
-			"name": "Integer Overflow or Wraparound",
-			"link": "http://cwe.mitre.org/top25/#CWE-190"
-		},
-
-		{
-			"id": "cwe759",
-			"name": "Use of a One-Way Hash without a Salt",
-			"link": "http://cwe.mitre.org/top25/#CWE-759"
+			"id": "cwe213",
+			"name": "Exposure of Sensitive Information to Incompatible Policies",
+			"link": "https://cwe.mitre.org/data/definitions/213.html"
 		}
+
+		
 	]
 }
