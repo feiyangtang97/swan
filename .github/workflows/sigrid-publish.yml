@@ -1,0 +1,20 @@
+name: Publish to Sigrid
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sigridci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Sigrid CI
+        uses: Software-Improvement-Group/sigridci@main
+        with:
+          customer: ssm
+          system: feiyang-test
+          publishonly: true
+        env:
+          SIGRID_CI_TOKEN: "eyJraWQiOiJzaWcta2V5IiwiYWxnIjoiUlMyNTYifQ.eyJqdGkiOiJkN2YwZjc0Ny05NDhkLTQ2ZTgtOWU2My05NDU2MGEzNWY2NzIiLCJzdWIiOiJzaWdva3RhLWlkcF9mLnRhbmdAc2lnLmV1IiwiaXNzIjoiaHR0cDovL2F1dGhhcGk6ODA4MCIsImlhdCI6MTY5NzE4MjUzNCwiZXhwIjoxNzI4NzE4NTM0LCJjb2duaXRvOmdyb3VwcyI6WyJzaWciXSwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiIiLCJ1c2VybmFtZSI6InNpZ29rdGEtaWRwX2YudGFuZ0BzaWcuZXUifQ.DT5HVZUH6DCnNNziZKlhEhUjSbRICW1EE-F8tO0j8iwztxXCpHG9XJyQlssrZFCi7w8WRrMyCXPgAiJK9si3wCH8qBEh6udDjupZfjboXvZaQDMPtgVooh6GSHpMASLW8tZltCSUoA1UikgduFWajqg-N4cb8TkumHExlseqJNts21B74Bq3bM55sm5GP7V_XmuBToz7_M6JtzSa7mtFuHd_HPDd-TUkxdNTGwyCZkR_jK0t62j_4089RczHErffJtqDlO3PjXaOyiBdLsVSTxN5QJ0L4nywN7u0rqM5Ypi6X27MFf3OizdMsfS9Mp66AeXmKL8peyynHm1gUP-5WQ"
